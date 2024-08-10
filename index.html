@@ -22,6 +22,195 @@
             text-align: center; /* Center text */
              overflow-x: hidden; /* Prevent horizontal scroll */
 }
+                .fixed-header {
+    position: fixed; /* Or absolute */
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+         .container {
+            padding: 20px;
+            max-width: 1200px; /* Added max-width to avoid overflow */
+            width: 100%;
+            box-sizing: border-box;
+                    }
+        .text-background {
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add some shadow for depth */
+        }
+          .video-section {
+            display: flex;
+            justify-content: center; /* Center videos horizontally */
+            overflow-x: auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            gap: 10px;
+            max-width: 1000px; /* Center content by setting a max width */
+            margin: 0 auto; /* Center horizontally */
+            flex-wrap: wrap; /* Allow wrapping of videos */
+        }
+           .toc {
+            margin-bottom: 20px;
+        }
+        .toc a {
+            text-decoration: none;
+            color: yellow;
+        }
+        .toc a:hover {
+            text-decoration: underline;
+        }
+        section {
+            margin-bottom: 50px;
+        }
+        .video {
+            min-width: 300px;
+            flex: 0 0 auto;
+        }
+        .video iframe {
+            width: 100%;
+            height: 200px;
+            border: none;
+        }
+         h1 {
+            font-size: 5em;
+            margin-top: 0;
+            padding: 10px 0;
+            text-shadow: 2px 2px 4px rgba(0.5, 0.5, 0.5, 0.5); /* Add shadow for readability */
+            color: red;
+        }
+           h2 {
+            font-size: 2em;
+            margin-top: 0;
+            padding: 10px 0;
+            text-shadow: 2px 2px 4px rgba(0.5, 0.5, 0.5, 0.5); /* Add shadow for readability */
+            color: red;
+        }
+         h3 {
+            font-size: 2em;
+            margin-top: 0;
+            padding: 10px 0;
+            text-shadow: 2px 2px 4px rgba(0.5, 0.5, 0.5, 0.5); /* Add shadow for readability */
+            color: Yellow;
+        }
+           p {
+            font-size: 2em;
+            margin-top: 0;
+            padding: 10px 0;
+            text-shadow: 2px 2px 4px rgba(0.5, 0.5, 0.5, 0.5); /* Add shadow for readability */
+            color: red;
+        }
+          .image-link {
+            display: inline-block;
+            margin: 10px;
+        }
+        .image-link img {
+            width: 200px; /* Adjust the size of the image */
+            height: auto;
+            border: none;
+            transition: transform 0.3s; /* Smooth zoom effect */
+        }
+        .image-link img:hover {
+            transform: scale(1.1); /* Zoom in on hover */
+        }
+          /* Media queries for responsive design */
+        @media (max-width: 768px) {
+             
+        * {
+            box-sizing: border-box;
+        }
+            h1 {
+                font-size: 3em;
+                font-family: Arial, sans-serif;
+            }
+            h2, h3, p {
+                font-size: 1.5em;
+                font-family: Arial, sans-serif;
+            }
+            .video iframe {
+                height: 150px;
+            }
+            .container {
+                padding: 10px; /* Adjust padding for smaller screens */
+                 box-sizing: border-box;
+            }
+            .text-background {
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add some shadow for depth */
+            }
+            .video-section {
+                padding: 10px; /* Adjust padding for smaller screens */
+            }
+            .image-link {
+            display: inline-block;
+            margin: 10px;
+        }
+
+        .image-link img {
+            width: 100px; /* Adjust the size of the image */
+            height: auto;
+            border: none;
+            transition: transform 0.3s; /* Smooth zoom effect */
+        }
+
+        .image-link img:hover {
+            transform: scale(1.1); /* Zoom in on hover */
+        }
+        }
+
+        @media (max-width: 480px) {
+             <style>
+        * {
+            box-sizing: border-box;
+        }
+            h1 {
+                font-size: 2em;
+                font-family: Arial, sans-serif;
+            }
+            h2, h3, p {
+                font-size: 1em;
+                font-family: Arial, sans-serif;
+            }
+            .video iframe {
+                height: 100px;
+            }
+            .container {
+                padding: 5px; /* Adjust padding for smaller screens */
+                box-sizing: border-box;
+            }
+            .text-background {
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add some shadow for depth */
+            }
+            .video-section {
+                padding: 5px; /* Adjust padding for smaller screens */
+            }
+            .image-link {
+            display: inline-block;
+            margin: 10px;
+        }
+
+        .image-link img {
+            width: 50px; /* Adjust the size of the image */
+            height: auto;
+            border: none;
+            transition: transform 0.3s; /* Smooth zoom effect */
+        }
+
+        .image-link img:hover {
+            transform: scale(1.1); /* Zoom in on hover */
+        }
+        }
+        
               
     </style>
 </head>
