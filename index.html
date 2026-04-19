@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8" /> 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Phoenix Insurance Services LLC</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -31,7 +31,7 @@
     .welcome p strong { color: var(--gold-light); font-weight: 500; }
     .welcome a { color: var(--gold-light); text-decoration: none; }
     .welcome a:hover { color: var(--white); }
-    .main { display: grid; grid-template-columns: 1fr 400px; gap: 0; max-width: 1200px; margin: 0 auto; padding: 56px 32px; align-items: start; }
+    .main { display: grid; grid-template-columns: 1fr 420px; gap: 0; max-width: 1200px; margin: 0 auto; padding: 56px 32px; align-items: start; }
     .services { padding-right: 56px; }
     .section-label { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
     .services h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 300; color: var(--white); line-height: 1.2; margin-bottom: 24px; }
@@ -43,12 +43,15 @@
     .card-icon { font-size: 1.5rem; margin-bottom: 10px; }
     .card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; color: var(--gold-light); margin-bottom: 6px; font-weight: 600; }
     .card p { font-size: 0.88rem; color: var(--muted); margin: 0; line-height: 1.6; }
+    .carriers-badge { background: var(--mid); border: 1px solid rgba(201,168,76,0.3); border-radius: 4px; padding: 16px 20px; margin-top: 20px; text-align: center; }
+    .carriers-badge p { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; color: var(--gold-light); font-style: italic; margin: 0; }
     .contact-block { background: var(--mid); border: 1px solid rgba(201,168,76,0.2); border-radius: 4px; padding: 28px 24px; margin-top: 40px; display: flex; align-items: flex-start; gap: 20px; }
     .contact-block .accent-bar { width: 3px; background: var(--gold); border-radius: 2px; align-self: stretch; flex-shrink: 0; }
     .contact-block h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--white); margin-bottom: 12px; }
     .contact-block a { display: block; color: var(--gold-light); text-decoration: none; font-size: 0.95rem; margin-bottom: 6px; transition: color 0.2s; }
     .contact-block a:hover { color: var(--white); }
-    .form-panel { background: var(--charcoal); border: 1px solid rgba(201,168,76,0.2); border-radius: 4px; padding: 36px 32px; position: sticky; top: 24px; }
+    /* FORM */
+    .form-panel { background: var(--charcoal); border: 1px solid rgba(201,168,76,0.2); border-radius: 4px; padding: 36px 32px; position: sticky; top: 24px; max-height: 90vh; overflow-y: auto; }
     .form-panel .section-label { margin-bottom: 6px; }
     .form-panel h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 400; color: var(--white); margin-bottom: 6px; }
     .form-panel .sub { font-size: 0.85rem; color: var(--muted); margin-bottom: 28px; line-height: 1.5; }
@@ -59,15 +62,16 @@
     .form-group input:focus, .form-group select:focus { border-color: var(--gold); }
     .form-group select option { background: var(--mid); }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-    .spouse-section { background: rgba(201,168,76,0.05); border: 1px solid rgba(201,168,76,0.12); border-radius: 3px; padding: 16px; margin-bottom: 16px; }
-    .spouse-section .spouse-label { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+    .service-section { background: rgba(201,168,76,0.05); border: 1px solid rgba(201,168,76,0.15); border-radius: 3px; padding: 16px; margin-bottom: 16px; display: none; }
+    .service-section.active { display: block; }
+    .service-section-label { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 14px; font-weight: 600; }
     .btn-submit { width: 100%; background: var(--gold); color: #0e0e0e; border: none; padding: 14px; font-family: 'Raleway', sans-serif; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; border-radius: 3px; cursor: pointer; transition: background 0.2s, transform 0.15s; margin-top: 8px; }
     .btn-submit:hover { background: var(--gold-light); transform: translateY(-1px); }
     .success-msg { display: none; text-align: center; padding: 20px; color: var(--gold-light); font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-style: italic; }
     footer { border-top: 1px solid rgba(201,168,76,0.15); text-align: center; padding: 24px 32px; background: var(--charcoal); }
     footer p { font-size: 0.8rem; color: var(--muted); letter-spacing: 0.08em; line-height: 1.8; }
     footer p span { color: var(--gold); }
-    @media (max-width: 900px) { .main { grid-template-columns: 1fr; padding: 40px 24px; } .services { padding-right: 0; margin-bottom: 40px; } .form-panel { position: static; } header { padding: 28px 24px; flex-direction: column; text-align: center; } .welcome { padding: 10px 24px 36px; } }
+    @media (max-width: 900px) { .main { grid-template-columns: 1fr; padding: 40px 24px; } .services { padding-right: 0; margin-bottom: 40px; } .form-panel { position: static; max-height: none; } header { padding: 28px 24px; flex-direction: column; text-align: center; } .welcome { padding: 10px 24px 36px; } }
     @media (max-width: 560px) { .feature-cards { grid-template-columns: 1fr; } .form-row { grid-template-columns: 1fr; } }
     @keyframes fadeUp { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
     .hero-banner, header, .welcome, .main { animation: fadeUp 0.7s ease both; }
@@ -75,11 +79,11 @@
     .welcome { animation-delay: 0.2s; }
     .main { animation-delay: 0.3s; }
   </style>
-</head> 
+</head>
 <body>
 
   <div class="hero-banner">
-    <p>As today's needs call for that final legacy for your loved ones — this is your only stop.</p>
+    <p>"Be the change you wish to see in the world." 
   </div>
 
   <header>
@@ -89,7 +93,7 @@
       </div>
       <div class="brand-text">
         <h1>Phoenix <span>Insurance</span> Services <span>LLC</span></h1>
-        <div class="slogan">"Your final act of love"</div>
+       
       </div>
     </div>
   </header>
@@ -102,25 +106,32 @@
       We are here from the beginning to after death to assist you and your family through the process.
       No 800 hotlines or customer service numbers — just us, directly.<br><br>
       <strong>Mike Walter</strong><br>
-      <a id="w1" href="#">269-221-0670</a><br>
+      <a href="tel:2692210670">269-221-0670</a><br>
       <a id="w2" href="#"></a><br>
-      <strong style="color:var(--gold-light);">Serving Michigan &amp; Indiana</strong><br>
+      <strong style="color:var(--gold-light);">Serving Michigan &amp; Indiana</strong>
     </p>
   </section>
 
   <main class="main">
 
+    <!-- LEFT: Services -->
     <div class="services">
       <p class="section-label">What We Offer</p>
-      <h2>Options &amp; Solutions for Your<br><em>Final Expense Needs</em></h2>
-      <p>We provide personalized final expense planning for you and your family — giving you peace of mind that your loved ones will be cared for without the stress of making difficult financial decisions during an already difficult time.</p>
-      <p><strong style="color:var(--gold-light);">No need to travel — we travel to you.</strong> We come directly to your home, on your schedule, to walk through every option at your comfort and pace.</p>
+      <h2>Comprehensive <em>Insurance Solutions</em><br>Tailored for You</h2>
+      <p>Phoenix Insurance Services provides options and solutions across life, business, and trucking insurance — working with <strong style="color:var(--gold-light);">100+ top American carriers</strong> to find the best individually tailored rates available.</p>
+      <p><strong style="color:var(--gold-light);">No need to travel — we travel to you.</strong> We come directly to your home or business, on your schedule, to walk through every option at your comfort and pace.</p>
 
       <div class="feature-cards">
-        <div class="card"><div class="card-icon">&#128737;</div><h3>Final Expense Coverage</h3><p>Affordable plans designed to cover end-of-life costs so your family isn't left with a burden.</p></div>
+        <div class="card"><div class="card-icon">&#10084;&#65039;</div><h3>Life Insurance</h3><p>Final expense, term, and whole life coverage to protect your family's future and provide lasting peace of mind.</p><p style="color:var(--gold-light);font-style:italic;font-size:0.82rem;margin-top:8px;">"Your final act of love"</p></div>
+        <div class="card"><div class="card-icon">&#127968;</div><h3>Home Insurance</h3><p>Comprehensive home coverage options tailored to your property, location, and budget.</p></div>
+        <div class="card"><div class="card-icon">&#128663;</div><h3>Auto Insurance</h3><p>Full and basic coverage options for individuals and families. We find the best rate across 100+ carriers.</p></div>
+        <div class="card"><div class="card-icon">&#128188;</div><h3>Business Insurance</h3><p>Protect your business assets, employees, and operations with customized commercial coverage.</p></div>
+        <div class="card"><div class="card-icon">&#128652;</div><h3>Trucking Insurance</h3><p>Specialized coverage for owner-operators and fleets. We understand the road and the risks.</p></div>
         <div class="card"><div class="card-icon">&#129309;</div><h3>Personal Service</h3><p>Direct access to Mike — no call centers, no runaround. Real guidance from a real person.</p></div>
-        <div class="card"><div class="card-icon">&#127968;</div><h3>We Come to You</h3><p>We meet in the comfort of your home, wherever you are, at a time that works for you.</p></div>
-        <div class="card"><div class="card-icon">&#128106;</div><h3>Family Planning</h3><p>Coverage options for you and your spouse, ensuring your whole family is protected.</p></div>
+      </div>
+
+      <div class="carriers-badge">
+        <p>&#11088; Working with 100+ Top American Carriers for the Best Individually Tailored Rates Available</p>
       </div>
 
       <div class="contact-block">
@@ -133,29 +144,133 @@
       </div>
     </div>
 
+    <!-- RIGHT: Form -->
     <div class="form-panel">
       <p class="section-label">Get in Touch</p>
       <h2>We'll Reach Out to You</h2>
       <p class="sub">Fill out this simple form and Mike will be in touch personally — no automated responses.</p>
 
       <form action="https://formspree.io/f/xzdjdzzp" method="POST" id="contactForm">
-        <div class="form-group"><label>Full Name</label><input type="text" name="name" placeholder="Your full name" required /></div>
-        <div class="form-group"><label>Address</label><input type="text" name="address" placeholder="Street, City, State, ZIP" /></div>
-        <div class="form-group"><label>Phone Number</label><input type="tel" name="phone" placeholder="(000) 000-0000" /></div>
+
+        <!-- Basic Info -->
         <div class="form-row">
-          <div class="form-group"><label>Age</label><input type="number" name="age" placeholder="Age" min="18" max="120" /></div>
-          <div class="form-group"><label>Marital Status</label>
-            <select name="marital_status">
+          <div class="form-group"><label>First Name</label><input type="text" name="first_name" placeholder="First name" required /></div>
+          <div class="form-group"><label>Last Name</label><input type="text" name="last_name" placeholder="Last name" required /></div>
+        </div>
+        <div class="form-group"><label>Phone Number</label><input type="tel" name="phone" placeholder="(000) 000-0000" /></div>
+        <div class="form-group"><label>Email</label><input type="email" name="email" placeholder="your@email.com" /></div>
+        <div class="form-group"><label>Address</label><input type="text" name="address" placeholder="Street, City, State, ZIP" /></div>
+        <div class="form-group"><label>Age</label><input type="number" name="age" placeholder="Your age" min="16" max="120" /></div>
+        <div class="form-group"><label>Driver's License Number</label><input type="text" name="drivers_license" placeholder="License number" /></div>
+
+        <!-- Service Type -->
+        <div class="form-group">
+          <label>Service Type</label>
+          <select name="service_type" id="serviceType">
+            <option value="" disabled selected>Select a service...</option>
+            <option value="auto">Auto Insurance</option>
+            <option value="home">Home Insurance</option>
+            <option value="life">Life Insurance</option>
+            <option value="business">Business Insurance</option>
+            <option value="trucking">Trucking Insurance</option>
+          </select>
+        </div>
+
+        <!-- AUTO SECTION -->
+        <div class="service-section" id="autoSection">
+          <div class="service-section-label">&#128663; Auto Insurance Details</div>
+          <div class="form-row">
+            <div class="form-group"><label>Year</label><input type="number" name="auto_year" placeholder="e.g. 2020" min="1900" max="2030" /></div>
+            <div class="form-group"><label>Make &amp; Model</label><input type="text" name="auto_make_model" placeholder="e.g. Toyota Camry" /></div>
+          </div>
+          <div class="form-group"><label>VIN Number</label><input type="text" name="auto_vin" placeholder="Vehicle VIN" /></div>
+          <div class="form-row">
+            <div class="form-group"><label>Coverage Type</label>
+              <select name="auto_coverage">
+                <option value="" disabled selected>Select...</option>
+                <option>Full Coverage</option>
+                <option>Basic / Liability</option>
+                <option>Comprehensive</option>
+                <option>Not Sure</option>
+              </select>
+            </div>
+            <div class="form-group"><label>Gender</label>
+              <select name="auto_gender">
+                <option value="" disabled selected>Select...</option>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Prefer not to say</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group"><label>Driver's License Number</label><input type="text" name="auto_license" placeholder="License number" /></div>
+        </div>
+
+        <!-- HOME SECTION -->
+        <div class="service-section" id="homeSection">
+          <div class="service-section-label">&#127968; Home Insurance Details</div>
+          <div class="form-group"><label>Type of Home</label>
+            <select name="home_type">
               <option value="" disabled selected>Select...</option>
-              <option>Single</option><option>Married</option><option>Widowed</option><option>Divorced</option>
+              <option>Single Family</option>
+              <option>Condo / Townhouse</option>
+              <option>Mobile Home</option>
+              <option>Multi-Family</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group"><label>Age of Home (years)</label><input type="number" name="home_age" placeholder="e.g. 15" min="0" max="300" /></div>
+          <div class="form-group"><label>Coverage Needed</label>
+            <select name="home_coverage">
+              <option value="" disabled selected>Select...</option>
+              <option>Full Replacement</option>
+              <option>Basic Coverage</option>
+              <option>Renters Insurance</option>
+              <option>Not Sure</option>
             </select>
           </div>
         </div>
-        <div class="spouse-section">
-          <div class="spouse-label">Spouse Information (if applicable)</div>
-          <div class="form-group"><label>Spouse Name</label><input type="text" name="spouse_name" placeholder="Spouse's full name" /></div>
-          <div class="form-group"><label>Spouse Age</label><input type="number" name="spouse_age" placeholder="Spouse's age" min="18" max="120" /></div>
+
+        <!-- LIFE SECTION -->
+        <div class="service-section" id="lifeSection">
+          <div class="service-section-label">&#10084;&#65039; Life Insurance Details</div>
+          <div class="form-group"><label>Date of Birth</label><input type="date" name="life_dob" /></div>
+          <div class="form-row">
+            <div class="form-group"><label>Age</label><input type="number" name="life_age" placeholder="Your age" min="0" max="120" /></div>
+            <div class="form-group"><label>Gender</label>
+              <select name="life_gender">
+                <option value="" disabled selected>Select...</option>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Prefer not to say</option>
+              </select>
+            </div>
+          </div>
         </div>
+
+        <!-- BUSINESS SECTION -->
+        <div class="service-section" id="businessSection">
+          <div class="service-section-label">&#128188; Business Insurance Details</div>
+          <div class="form-group"><label>Business Name</label><input type="text" name="business_name" placeholder="Your business name" /></div>
+          <div class="form-group"><label>Type of Business</label><input type="text" name="business_type" placeholder="e.g. Retail, Contractor, Restaurant" /></div>
+          <div class="form-group"><label>Number of Employees</label><input type="number" name="business_employees" placeholder="e.g. 5" min="0" /></div>
+        </div>
+
+        <!-- TRUCKING SECTION -->
+        <div class="service-section" id="truckingSection">
+          <div class="service-section-label">&#128652; Trucking Insurance Details</div>
+          <div class="form-group"><label>Owner-Operator or Fleet?</label>
+            <select name="trucking_type">
+              <option value="" disabled selected>Select...</option>
+              <option>Owner-Operator</option>
+              <option>Small Fleet (2–5)</option>
+              <option>Large Fleet (6+)</option>
+            </select>
+          </div>
+          <div class="form-group"><label>Number of Trucks</label><input type="number" name="trucking_count" placeholder="e.g. 1" min="1" /></div>
+          <div class="form-group"><label>CDL Number</label><input type="text" name="trucking_cdl" placeholder="CDL license number" /></div>
+        </div>
+
         <button type="submit" class="btn-submit">Send My Information &#8594;</button>
       </form>
       <div class="success-msg" id="successMsg">Thank you! Mike will be in touch with you shortly.</div>
@@ -165,7 +280,8 @@
 
   <footer>
     <p>&copy; 2025 <span>Phoenix Insurance Services LLC</span><br>
-    Mike Walter &nbsp;&nbsp; 269-221-0670 &nbsp;&nbsp; <span id="f1"></span></p>
+    Mike Walter &nbsp;&nbsp; 269-221-0670 &nbsp;&nbsp; <span id="f1"></span><br>
+    Serving Michigan &amp; Indiana</p>
   </footer>
 
   <script>
@@ -184,6 +300,22 @@
 
       var f1 = document.getElementById('f1');
       if(f1){ f1.textContent = e; }
+
+      // Show/hide service-specific form sections
+      var serviceSelect = document.getElementById('serviceType');
+      var sections = {
+        auto: document.getElementById('autoSection'),
+        home: document.getElementById('homeSection'),
+        life: document.getElementById('lifeSection'),
+        business: document.getElementById('businessSection'),
+        trucking: document.getElementById('truckingSection')
+      };
+
+      serviceSelect.addEventListener('change', function() {
+        Object.values(sections).forEach(function(s) { if(s) s.classList.remove('active'); });
+        var selected = sections[this.value];
+        if(selected) selected.classList.add('active');
+      });
 
       var form = document.getElementById('contactForm');
       if(form){
